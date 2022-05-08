@@ -16,9 +16,9 @@
 	    },
 	    init: function () {
 	      var data = this.data;
-	      var el = this.el;
-	      el.addEventListener('click', function () {
-		        window.open(data.url, '_blank');
+	      this.el.addEventListener('click',  (e)=> {
+          console.log("data click", data)
+		      window.open(data.url, '_blank');
 	      });
 	    }
 	  });        
@@ -26,6 +26,8 @@
 </head>
 	
 <body style='margin : 0px; overflow: hidden;'>
+
+  
 	<a-scene embedded arjs='trackingMethod: best;'>
 		
 		<a-assets>
@@ -39,33 +41,33 @@
       
 		</a-assets>
 		
-		<a-plane rotation="-90 0 0" color="#3199f9" navigate-on-click="url: https://www.linkedin.com/in/nikhilkarkra/">
-      <a-image src="./assets/nkarkra.png"></a-image>
+		<a-plane position="0 0 0" rotation="-90 0 0" color="#3199f9">
+      <a-image src="./assets/nkarkra.png" height="0"></a-image>
     </a-plane>
-		<a-plane position="0 0 0.8" opacity="0" width="2" height="0.3" rotation="-90 0 0">
-      <a-box src="#trailhead_icon" position="-0.9 0 0" depth="0.20" height="0.20" width="0.20" navigate-on-click="url: https://trailhead.me/nkarkra">
+
+		<a-plane position="0 0 0.8" opacity="0" rotation="-90 0 0">
+      <a-box src="#trailhead_icon" position="-0.9 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: https://trailhead.me/nkarkra">
 				<a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
 			</a-box>
-			<a-box src="#github_icon" position="-0.6 0 0" depth="0.20" height="0.20" width="0.20" navigate-on-click="url: http://github.com/karkranikhil">
+			<a-box src="#github_icon" position="-0.6 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://github.com/karkranikhil">
 				<a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
 			</a-box>
-			<a-box src="#troop_icon" position="-0.3 0 0" depth="0.20" height="0.20" width="0.20" navigate-on-click="url: http://salesforcetroop.com">
+			<a-box src="#troop_icon" position="-0.3 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://salesforcetroop.com">
 				<a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
 			</a-box>
-			<a-box src="#linkedin_icon" position="0 0 0" depth="0.20" height="0.20" width="0.20" navigate-on-click="url: https://www.linkedin.com/in/nikhilkarkra/">
+			<a-box src="#linkedin_icon" position="0 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: https://www.linkedin.com/in/nikhilkarkra/">
 				<a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
 			</a-box>
-			<a-box src="#youtube_icon" position="0.3 0 0" depth="0.20" height="0.20" width="0.20" navigate-on-click="url: http://youtube.com/salesforcetroop">
+			<a-box src="#youtube_icon" position="0.3 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://youtube.com/salesforcetroop">
 				<a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
 			</a-box>
-      <a-box src="#whatsapp_icon" position="0.6 0 0" depth="0.20" height="0.20" width="0.20" navigate-on-click="url: https://api.whatsapp.com/send/?phone=+61468305744&text=Hello%20Nikhil">
+      <a-box src="#whatsapp_icon" position="0.6 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: https://api.whatsapp.com/send/?phone=+61468305744&text=Hello%20Nikhil">
 				<a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
 			</a-box>
-     
       
 		</a-plane>
-		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
-		<a-marker-camera preset='hiro'></a-marker-camera>
+		<a-entity id="camera"  look-controls  cursor="rayOrigin: mouse"></a-entity>
+		<a-marker-camera type="pattern" url="pattern.patt"></a-marker-camera>
 	</a-scene>
 </body>
 </html>
